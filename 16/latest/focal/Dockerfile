@@ -4,6 +4,7 @@ RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/sh --create-home node
 
 RUN apt update; \
+  apt upgrade -y; \
   apt install curl -y; \
   curl -fsSL https://deb.nodesource.com/setup_16.x | bash -; \
   apt install -y nodejs; \
